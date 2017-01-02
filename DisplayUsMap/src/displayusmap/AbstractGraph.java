@@ -1,7 +1,7 @@
 /*
  * 
  */
-package testgraph;
+package displayusmap;
 import java.util.*;
 /**
  *
@@ -17,7 +17,7 @@ protected AbstractGraph(){
 }
 
 //construct a graph from vertices and edges stored in arrays
-protected AbstractGraph(V[] vertices, int [][] edges){
+protected AbstractGraph(V[] vertices, int[][] edges){
     for(int i = 0; i < vertices.length;i++)
         addVertex(vertices[i]);
     createAdjacencyLists(edges, vertices.length);

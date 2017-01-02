@@ -7,12 +7,13 @@ package displayusmap;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.control.Button;
+
 /**
  *
  * @author harisu
  */
 public class DisplayUsMap extends Application {
-        
     @Override //overrides the start method of the application class
     public void start(Stage primaryStage){
         City[] vertices = { new City("Seattle",75,50),
@@ -41,18 +42,19 @@ public class DisplayUsMap extends Application {
 {11, 8}, {11, 9}, {11, 10}
         };
     
-    Graph<City> graph = new UnweightedGraph<>(vertices,edges);
+    Graph<City> graph = new UnweightedGraph<City>(vertices,edges);
     //create a scene and place it in the stage
-     Scene scene = new Scene(new GraphView(graph), 750, 450);
+    //GraphView graphview = new GraphView(graph);
+     Scene scene = new Scene((new GraphView(graph)), 750, 450);
      primaryStage.setTitle("DisplayUsMap"); //set the title
      primaryStage.setScene(scene); //place the scene in the stage
      primaryStage.show();//display the stage
             
     }
-    
     public static void main(String[] args){
         Application.launch();
     }
+  
     
     static class City implements Displayable{
         private int x, y;
